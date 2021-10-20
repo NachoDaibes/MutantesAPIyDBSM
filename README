@@ -1,0 +1,12 @@
+				       -----README-----
+
+Para la realización de la API REST dividí la organización en paquetes. El paquete "Matrices" tiene dentro una clase "Matriz" y en ella se encuentra implementado el método que analiza la matriz de el adn de una persona. Puse este método en una clase aparte para evitar la sobrecarga del servicio o controlador(depende de dónde se haya implementado).
+
+En el BaseController se encuentran los métodos comúnes a las entidades presentes y futuras a implementar(getAll, getOne, save, update, delete).
+
+Aparte creé un DTO que se encarga de recibir el objeto Json y transformarlo con Gson a un clase manejable por Java. De esta forma el algoritmo podrá hacer un análisis correcto.
+Lo que se hace para modificar el objeto Json recibido a una clase Java es crear una instancia de la clase DNA_DTO y luego desde gson se convierte el primer parámetro(El Object dna hecho String con toString), a una nueva instancia de clase DNA_DTO que se llama "adn".
+
+Entonces si nosotros desde Postman hacemos una consulta al endpoint "http://localhost:9000/api/v2/personas/mutant/" con un dna con el formato "{
+"dna":["AAAAAA","CABBBB","TTATGT","AGAAGG","CCCCTA","TCACTG"]
+}", nos mostrará el nombre de la persona, su apellido y si es mutante o no.
