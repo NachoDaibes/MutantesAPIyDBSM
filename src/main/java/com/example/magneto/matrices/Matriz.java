@@ -17,8 +17,18 @@ public class Matriz {
 
     //Algoritmo que analiza todas las diagonales e indica si la persona es mutante o no
     public Boolean isMutant(List<String> dna){
-
         boolean is = false;
+
+        //Valida que los caracteres de la matriz sean los correctos
+        for (String s: dna){
+            for (int i = 0; i < s.length(); i++){
+                if (s.charAt(i) != 'A' && s.charAt(i) != 'G' && s.charAt(i) != 'C' && s.charAt(i) != 'T'){
+                    System.out.println("El caracter " + "'" + s.charAt(i) + "'" + " no es válido");
+                    return is;
+                }
+            }
+        }
+
         for (String s : dna) {//por cada palabra del arrray va a hacer un analisis horizontal
             analisisHorizontal(s);
         }
