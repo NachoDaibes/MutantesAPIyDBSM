@@ -85,11 +85,11 @@ public class MatrizTest {
         boolean resultado = false;
         boolean esperado = true;
 
-        matriz.getDna().add("AAAAA");
-        matriz.getDna().add("AQAAA");
-        matriz.getDna().add("QAAAA");
-        matriz.getDna().add("AQAAQ");
-        matriz.getDna().add("AAAGA");
+        matriz.getDna().add("AAAAT");
+        matriz.getDna().add("GACAT");
+        matriz.getDna().add("TTTTG");
+        matriz.getDna().add("TGTAA");
+        matriz.getDna().add("ATCAA");
         assertEquals(esperado, matriz.isMutant(matriz.getDna()));
     }
 }
