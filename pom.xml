@@ -75,8 +75,10 @@
                 <version>2.5.4</version>
                 <configuration>
                     <excludes>
-                        <gourpId>org.projectlombok</gourpId>
-                        <artefactId>lombok</artefactId>
+                        <exclude>
+                            <gourpId>org.projectlombok</gourpId>
+                            <artefactId>lombok</artefactId>
+                        </exclude>
                     </excludes>
                 </configuration>
             </plugin>
